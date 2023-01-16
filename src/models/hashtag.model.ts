@@ -4,7 +4,7 @@ import Sequelize, { CreationOptional, InferAttributes, InferCreationAttributes, 
 // Sequelize에 Typescript 적용하기 ( Sequelize < 6.14.0 )
 // Model에 들어가는 attributes를 직접 타입을 설정하여 제네릭 방식으로 지정해주어야 한다.
 class Hashtag extends Model<InferAttributes<Hashtag>, InferCreationAttributes<Hashtag>> {
-    
+
     // 타입스크립트는 속성 정의만으로 타입추론을 하지 못한다.
     // declare를 사용해서 속성들의 타입추론을 돕는다.
     // declare는 변수 선언시 초기값을 넣지 않고, 단지 타입만 설정하기 위해 사용
@@ -48,7 +48,6 @@ class Hashtag extends Model<InferAttributes<Hashtag>, InferCreationAttributes<Ha
         // ECMNAScript 모듈 시스템에서는 CommonJS에서 발생되는 순환참조가 발생하지 않기 때문
         Hashtag.belongsToMany(Post, { through: 'PostHashtag'})
     }
-
 }
 
 export default Hashtag;

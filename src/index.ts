@@ -9,9 +9,8 @@ import express, { Application, Request, Response, NextFunction, ErrorRequestHand
 
 import { sequelize } from './models/index.model';
 import passportConfig from './passport/index.passport';
-const allowedOrigins = ['http://localhost:3000'];
 const options: cors.CorsOptions = {
-	origin: allowedOrigins,
+	origin: ['http://localhost:3000', 'http://localhost:8090'],
 	credentials: true,
 };
 
